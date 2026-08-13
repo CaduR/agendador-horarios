@@ -24,10 +24,7 @@ public class AgendamentoService {
         Agendamento agendados = agendamentoRepository.findByServicoAndDataHoraAgendamentoBetween(agendamento.getServico(), horaAgendamento, horaFim);
 
 
-        if(Objects.nonNull(agendados)){
-            agendamentoRepository.save(agendamento);
-        }
-        else {
+        if (Objects.nonNull(agendados)) {
             throw new RuntimeException("Horario já está preenchido");
         }
         return agendamentoRepository.save(agendamento);

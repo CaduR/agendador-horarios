@@ -37,7 +37,7 @@ public class AgendamentoController {
 
     @PutMapping
     public ResponseEntity<Agendamento> alterarAgendamento(@RequestParam String cliente,
-                                                          @RequestParam Agendamento agendamento,
+                                                          @RequestBody Agendamento agendamento,
                                                           @RequestParam LocalDateTime dataHoraAgendamento){
 
         return ResponseEntity.accepted().body(agendamentoService.alterarAgendamento(agendamento, cliente, dataHoraAgendamento));
